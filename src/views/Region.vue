@@ -6,11 +6,6 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" color="primary">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Region</ion-title>
-        </ion-toolbar>
-      </ion-header>
       <div>
          <Search  @regions="searchRegion"></Search>
          <Results v-bind:allData="infoRegion"></Results>
