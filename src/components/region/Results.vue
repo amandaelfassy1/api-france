@@ -28,5 +28,7 @@ ion-card-title {
 }
 ion-card-subtitle{
   color: black !important;
+  text-align: center;
 }
+
 </style>  

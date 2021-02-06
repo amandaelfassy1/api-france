@@ -1,8 +1,9 @@
 <template>
-    <form id="form" action="" @submit='HandleSubmit'>        
+    <form id="form" action="" @submit='HandleSubmit'>     
+      <h1>Région</h1>
       <ion-item>
         <ion-label position="floating">Région :</ion-label>
-        <ion-select  id="select" placeholder="Select One" v-model="selectedRegion" >
+        <ion-select  id="select" placeholder="Séléctionner" v-model="selectedRegion" >
           <ion-select-option v-for="(value, key) in regions" v-bind:key="key" v-bind:value="value.code">
             {{ value.code }} - {{ value.nom }}
           </ion-select-option>
@@ -64,5 +65,11 @@ methods:{
 <style>
 .alert-button.sc-ion-alert-md{
   color :black;
+}
+h1{
+  color: black  !important;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 </style>

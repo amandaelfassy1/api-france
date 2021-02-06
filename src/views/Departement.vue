@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header color="secondary">
+ <ion-header color="secondary">
       <ion-toolbar color="secondary">
         <ion-title>ApiFrance</ion-title>
       </ion-toolbar>
@@ -8,7 +8,7 @@
     <ion-content :fullscreen="true" color="primary">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Departement</ion-title>
+          <ion-title size="large">Département</ion-title>
         </ion-toolbar>
       </ion-header>
       <div>

@@ -6,42 +6,62 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" color="primary">
-    
       <div id="container">
-        <svg viewBox="46 0 400 150">
-          <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-          <text width="500">
-            <textPath xlink:href="#curve">
-              Vous rêvez d'être fort en géographie ? 
-            </textPath>
-          </text>
-        </svg>
-      <img class="img" src="../../public/assets/image/france.jpg" alt="">
-       <svg class="rotate" viewBox="46 0 400 150">
-          <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-          <text width="500">
-            <textPath xlink:href="#curve">
-              C'est possible ! Avec ApiFrance !!!
-            </textPath>
-          </text>
-        </svg>
-    </div>
-     
+        <div class="content">
+          <svg viewBox="46 0 400 150">
+            <path
+              id="curve"
+              d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
+            />
+            <text width="500">
+              <textPath xlink:href="#curve">
+                Vous rêvez d'être fort en géographie ?
+              </textPath>
+            </text>
+          </svg>
+          <img class="img" src="../../public/assets/image/france.jpg" alt="" />
+          <svg class="rotate" viewBox="46 0 400 150">
+            <path
+              id="curve"
+              d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
+            />
+            <text width="500">
+              <textPath xlink:href="#curve">
+                C'est possible ! Avec ApiFrance !!!
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <h6>
+          Recherchez les communes francaises selon leur code postal ou leur
+          département !
+        </h6>
+        <h6>
+          Recherchez les communes francaises selon leur code de département !
+        </h6>
+        <h6>Recherchez les departements francais selon leur région !</h6>
+      </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script>
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+} from "@ionic/vue";
 
-export default  {
-  name: 'Home',
-  components: {  IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
-}
+export default {
+  name: "Home",
+  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage },
+};
 </script>
 <style scoped>
-img{
-  width:90%;
+img {
+  width: 90%;
   text-align: center;
 }
 #container {
@@ -53,6 +73,10 @@ img{
   transform: translateY(-50%);
   padding: 15px;
 }
+.content {
+  width: 70%;
+  margin: auto;
+}
 path {
   fill: transparent;
 }
@@ -62,7 +86,12 @@ text {
   font-size: 24px;
   font-weight: bold;
 }
-.rotate{
+.rotate {
   transform: rotate(180deg);
+}
+h6 {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
 }
 </style>

@@ -6,10 +6,10 @@
                 <ion-card-title>{{commune.nom}}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-                <ion-card-subtitle>Departement : {{commune.codeDepartement}}</ion-card-subtitle>
-                <ion-card-subtitle>Population : {{commune.population}}</ion-card-subtitle>
-                <ion-card-subtitle>Code postaux : {{commune.codesPostaux.join('-')}}</ion-card-subtitle>
-                <ion-card-subtitle>Region : {{commune.codeRegion}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Département : </strong>  {{commune.codeDepartement}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Population : </strong> {{commune.population}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Code postaux : </strong> {{commune.codesPostaux.join('-')}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Region : </strong> {{commune.codeRegion}}</ion-card-subtitle>
             </ion-card-content>
        </ion-card>
     </div>  
@@ -28,11 +28,17 @@ export default  {
 ion-card-title {
     color: black  !important;
     font-weight: bold;
+    text-align: center;
 }
 ion-card-subtitle {
     color: black  !important;
+    padding-bottom: 10px;
 }
 .alert-button.sc-ion-alert-md{
   color :black;
+}
+ion-title{
+  text-align: center;
+  padding: 10px;
 }
 </style>

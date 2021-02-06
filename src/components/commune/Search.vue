@@ -4,8 +4,8 @@
           <ion-title>Rechercher via le code postal les communes correspondantes <br> ou recherchez une ville <br> pour afficher les communes du même nom.</ion-title>
     </ion-item> -->
     <form id="form" action="" @submit='HandleSubmit'> 
-        <ion-title>Commune</ion-title>
-       <ion-item color="primary">
+        <h1>Commune</h1>
+       <ion-item>
           <ion-label position="floating" color="success">Code postal ou ville </ion-label>
           <ion-input color="success" v-model="search" @input="search = $event.target.value"></ion-input>
         </ion-item>
@@ -56,4 +56,10 @@ components: {
 </script>
 <style>
 
+h1{
+  color: black  !important;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
 </style>

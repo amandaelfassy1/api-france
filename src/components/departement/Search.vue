@@ -1,8 +1,9 @@
 <template>
-    <form id="form" action="" @submit='HandleSubmit'>        
+    <form id="form" action="" @submit='HandleSubmit'>  
+      <h1>Département</h1>      
       <ion-item>
         <ion-label position="floating">Département :</ion-label>
-        <ion-select color="secondary" id="select" placeholder="Select One" v-model="selectedDepartement" >
+        <ion-select color="secondary" id="select" placeholder="Séléctionner" v-model="selectedDepartement" >
           <ion-select-option v-for="(value, key) in departements" v-bind:key="key" v-bind:value="value.code">
             {{ value.code }} - {{ value.nom }}
           </ion-select-option>
@@ -66,5 +67,11 @@ methods:{
 
 .alert-button.sc-ion-alert-md {
   color: black !important;
+}
+h1{
+  color: black  !important;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 </style>
