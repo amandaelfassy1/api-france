@@ -1,16 +1,15 @@
 <template>
   <ion-page>
- <ion-header color="secondary">
+   <ion-header color="secondary">
       <ion-toolbar color="secondary">
         <ion-title>ApiFrance</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" color="white">
       <div>
-         <Search  @departement="searchDepartement"></Search>
-         <Results v-bind:allData="infoDepartement"></Results>
+         <Search  @regions="searchRegion"></Search>
+         <Results v-bind:allData="infoRegion"></Results>
     </div>
-     
     </ion-content>
   </ion-page>
 </template>
@@ -18,28 +17,28 @@
 <script>
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, alertController } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import Search from '@/components/departement/Search';
-import Results from '@/components/departement/Results';
+import Search from '@/components/region/SearchComponent';
+import Results from '@/components/region/ResultsList';
 import axios from 'axios'
 
 export default defineComponent({
-  name: 'Departement',
+  name: 'RegionView',
   components: {  IonHeader, IonToolbar, IonTitle, IonContent, Search, Results, IonPage },
   data(){
     return{
-      infoDepartement:null
+      infoRegion:null
     }
   },
   methods: {
-    searchDepartement(data){
+    searchRegion(data){
       console.log(data)
         axios
           .get(
-           `https://geo.api.gouv.fr/departements/${data}/communes`
+           `https://geo.api.gouv.fr/regions/${data}/departements`
           )
           .then((response)=>{
             console.log(response)
-            this.infoDepartement=response.data;
+            this.infoRegion=response.data;
           })
            .catch(() => {
              return alertController.create({
@@ -51,11 +50,18 @@ export default defineComponent({
             return alert.present();
           });
         });
-     
     }
   }
 })
 </script>
 <style scoped>
-
-</style> 
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 15px;
+}
+</style>

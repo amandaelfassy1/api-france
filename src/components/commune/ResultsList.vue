@@ -1,28 +1,27 @@
 <template>
-      <div v-if="allData">
+      <div id="container" v-if="allData">
         <ion-title color="success">{{allData.length}} {{ allData.length == 1 ? 'résultat' : 'résultats' }}</ion-title>
-         <ion-card color="tertiary" v-for="commune in allData" v-bind:key="commune.code">
+         <ion-card  color="tertiary" v-for="commune in allData" v-bind:key="commune.code">
             <ion-card-header>
                 <ion-card-title>{{commune.nom}}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-                <ion-card-subtitle><strong>Département : </strong>  {{commune.codeDepartement}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Code : </strong> {{commune.codesPostaux.join('-')}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Département : </strong> {{commune.departement.code}}</ion-card-subtitle>
                 <ion-card-subtitle><strong>Population : </strong> {{commune.population}}</ion-card-subtitle>
-                <ion-card-subtitle><strong>Code postaux : </strong> {{commune.codesPostaux.join('-')}}</ion-card-subtitle>
-                <ion-card-subtitle><strong>Region : </strong> {{commune.codeRegion}}</ion-card-subtitle>
+                <ion-card-subtitle><strong>Region : </strong> {{commune.region.code}}</ion-card-subtitle>
             </ion-card-content>
        </ion-card>
-    </div>  
+    </div> 
 </template>
 
 <script>
-// import ExploreContainer from '@/components/ExploreContainer.vue';
 import {IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle}  from '@ionic/vue';
 export default  {
-  name: 'Search',
-  components: {  IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle },
-  props : ['allData']
-}
+  name: 'SearchComponent',
+  components: {IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle},
+  props:["allData"],
+  }
 </script>
 <style>
 ion-card-title {
@@ -33,9 +32,7 @@ ion-card-title {
 ion-card-subtitle {
     color: black  !important;
     padding-bottom: 10px;
-}
-.alert-button.sc-ion-alert-md{
-  color :black;
+
 }
 ion-title{
   text-align: center;

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import Tabs from '../views/Tabs.vue'
+import Tabs from '../views/MainTabs.vue'
 
 const routes= [
   {
@@ -13,19 +13,19 @@ const routes= [
     children: [
       {
         path: 'home',
-        component: () => import('@/views/Home.vue')
+        component: () => import('@/views/HomeView.vue')
       },
       {
         path: 'commune',
-        component: () => import('@/views/Commune.vue')
+        component: () => import('@/views/CommuneView.vue')
       },
       {
         path: 'departement',
-        component: () => import('@/views/Departement.vue')
+        component: () => import('@/views/DepartementView.vue')
       },
       {
         path: 'region',
-        component: () => import('@/views/Region.vue')
+        component: () => import('@/views/RegionView.vue')
       }
     ]
   }

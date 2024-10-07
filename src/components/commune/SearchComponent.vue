@@ -20,7 +20,7 @@ export default {
 components: {
     IonButton, IonItem, IonInput, IonLabel, 
   },    
-  name: 'Search',
+  name: 'SearchComponent',
   data(){
     return{
      commune:'',

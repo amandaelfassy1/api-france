@@ -15,8 +15,8 @@
 import {IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle}  from '@ionic/vue';
 
 export default  {
-  name: 'Results',
-  components: {  IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle },
+  name: 'ResultsList',
+  components: { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle },
   props : ['allData']
 }
 </script>

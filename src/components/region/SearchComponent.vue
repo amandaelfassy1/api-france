@@ -19,7 +19,7 @@ import axios from 'axios';
 import { IonButton, IonSelect, IonItem, IonLabel, IonSelectOption, alertController } from "@ionic/vue";
 
 export default  {
-  name: 'Search',
+  name: 'SearchComponent',
   components: {
     IonButton, IonSelect, IonItem, IonLabel, IonSelectOption , 
   },

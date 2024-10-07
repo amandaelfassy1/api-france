@@ -24,24 +24,26 @@
         </ion-tab-button>
 
       </ion-tab-bar>
+      <!-- Ajout de IonRouterOutlet ici -->
+      <ion-router-outlet></ion-router-outlet>
     </ion-tabs>
-    
   </ion-page>
 </template>
 
 <script>
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage } from '@ionic/vue';
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import { add } from "ionicons/icons";
 import { addIcons } from "ionicons";
-  addIcons({
-    "ios-add": add.ios,
-    "md-add": add.md
-  });
+
+addIcons({
+  "ios-add": add.ios,
+  "md-add": add.md
+});
 
 export default {
-  name: 'Tabs',
-  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage },
+  name: 'MainTabs',
+  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
   setup() {
     return {
       ellipse, 

@@ -18,12 +18,12 @@
 <script>
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, alertController } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import Search from '@/components/commune/Search';
-import Results from '@/components/commune/Results';
+import Search from '@/components/commune/SearchComponent';
+import Results from '@/components/commune/ResultsList';
 import axios from 'axios';
 
 export default defineComponent({
-  name: 'Commune',
+  name: 'CommuneView',
   components: {  IonHeader, IonToolbar, IonTitle, IonContent, Search, Results, IonPage },
   data(){
     return{

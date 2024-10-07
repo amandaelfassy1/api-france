@@ -44,7 +44,7 @@ import {
 } from "@ionic/vue";
 
 export default {
-  name: "Home",
+  name: "HomeView",
   components: {  IonContent, IonPage, IonButton },
 };
 </script>
