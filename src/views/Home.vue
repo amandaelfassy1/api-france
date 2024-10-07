@@ -1,45 +1,35 @@
 <template>
   <ion-page>
-    <ion-header color="secondary">
-      <ion-toolbar color="secondary">
-        <ion-title>ApiFrance</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true" color="primary">
+    <!-- En-tête de la page -->
+  
+    <!-- Contenu principal -->
+    <ion-content :fullscreen="true" color="white">
       <div id="container">
         <div class="content">
-          <svg viewBox="46 0 400 150">
-            <path
-              id="curve"
-              d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
-            />
-            <text width="500">
-              <textPath xlink:href="#curve">
-                Vous rêvez d'être fort en géographie ?
-              </textPath>
-            </text>
-          </svg>
-          <img class="img" src="../../public/assets/image/france.jpg" alt="" />
-          <svg class="rotate" viewBox="46 0 400 150">
-            <path
-              id="curve"
-              d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
-            />
-            <text width="500">
-              <textPath xlink:href="#curve">
-                C'est possible ! Avec ApiFrance !!!
-              </textPath>
-            </text>
-          </svg>
+          <img class="img" src="../../public/assets/image/france1.jpg" alt="Carte de France" />
+          <h1  color="secondary">Vous rêvez d'être fort en géographie ? </h1>
+          <h5  color="secondary"> C'est possible ! Avec ApiFrance !</h5>
         </div>
-        <h6>
-          Recherchez les communes francaises selon leur code postal ou leur
-          département !
-        </h6>
-        <h6>
-          Recherchez les communes francaises selon leur code de département !
-        </h6>
-        <h6>Recherchez les departements francais selon leur région !</h6>
+
+        <div class="description">
+        <div class="button-container">
+          <ion-button router-link="/commune" expand="block" color="tertiary" class="cta-button">
+            Communes
+          </ion-button>
+        </div>
+        
+        <div class="button-container">
+          <ion-button router-link="/departement" expand="block" color="tertiary" class="cta-button">
+            Départements
+          </ion-button>
+        </div>
+        
+        <div class="button-container">
+          <ion-button router-link="/region" expand="block" color="tertiary" class="cta-button">
+            Régions
+          </ion-button>
+        </div>
+      </div>
       </div>
     </ion-content>
   </ion-page>
@@ -48,50 +38,117 @@
 <script>
 import {
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
+ 
   IonContent,
+  IonButton
 } from "@ionic/vue";
 
 export default {
   name: "Home",
-  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage },
+  components: {  IonContent, IonPage, IonButton },
 };
 </script>
+
 <style scoped>
-img {
-  width: 90%;
+/* Styles généraux */
+ion-header {
+  --background: var(--ion-color-primary);
+  --color: white;
+}
+
+h1{
+  font-size: 36px;
+  font-weight: bold;
   text-align: center;
 }
+
 #container {
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
 }
+
 .content {
-  width: 70%;
-  margin: auto;
+  margin-bottom: 30px;
 }
+
+.curve {
+  margin-bottom: 15px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  margin-top: 20px;
+}
+
 path {
   fill: transparent;
 }
 
 text {
   fill: #e62053;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 600;
 }
-.rotate {
-  transform: rotate(180deg);
+
+img {
+  width: 85%;
+  /* margin: 25px auto; */
+  border-radius: 12px;
+  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); */
+  transition: transform 0.3s ease-in-out;
 }
-h6 {
-  color: black;
+
+img:hover {
+  transform: scale(1.08);
+}
+
+/* Description et boutons */
+.description h6 {
+  color: #333;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.cta-button {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  --border-radius: 20px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+.description {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px;
+  gap: 10px; 
+}
+
+.button-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+
+/* Responsivité pour écrans larges */
+@media (min-width: 768px) {
+  #container {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  img {
+    width: 60%;
+  }
+
+  .description h6 {
+    font-size: 18px;
+  }
 }
 </style>

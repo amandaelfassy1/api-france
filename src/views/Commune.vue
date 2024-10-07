@@ -5,7 +5,7 @@
         <ion-title>ApiFrance</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" color="primary">
+    <ion-content :fullscreen="true" color="white">
       
       <div id="container">
         <Search @commune="searchCommune" @code="searchByCode"></Search>

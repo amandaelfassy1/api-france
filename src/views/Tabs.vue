@@ -25,6 +25,7 @@
 
       </ion-tab-bar>
     </ion-tabs>
+    
   </ion-page>
 </template>
 
